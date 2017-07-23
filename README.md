@@ -63,3 +63,10 @@
 
       Run 'sqllocaldb create MSSQLLocalDB' in command prompt, then run 'sqllocaldb info' and see that 'MSSQLLocalDB' shows up.
     
+### Connecting to LocalDB from SQL Server Management Studio
+
+Server Type : Database Engine
+Server Name : (LocalDb)\MSSQLLocalDB
+Authentication : Windows Authentication
+
+Then click connect!
