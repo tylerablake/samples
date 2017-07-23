@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -23,11 +24,25 @@ namespace KHBPA.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+#if DEBUG
+            ////This will create database if one doesn't exist.
+            Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
+            ////This will drop and re-create the database if model changes.
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
+#endif
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
-    }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingEntitySetNameConvention>();
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public DbSet<Member> Members { get; set; }
+    } 
 }
