@@ -1,9 +1,7 @@
-# samples
-Repo to house sample applications for mentoring/teaching
+# Getting up and running following one of my samples.
 
-Getting up and running following one of my samples.
 
-Creating your first project.
+## Creating and Commiting your first project.
 1. Create a repository under your GitHub account.
 2. Open Team Explorer in Visual Studio and clone that new repository.
 3. Create a new "ASP .NET Web" project.
@@ -15,15 +13,26 @@ Creating your first project.
 9. Then create the project.
 10. Build the solution (Ctrl + Shift + B).
 11. Run the solution.
-12. If it builds and runs, then commit with a message similar to this... "Initial Commit".
+12. If it builds and runs:
+
+      Then go to "Team Explorer", Select the "Changes" tab.
+      
+      Enter a desciptive commit message and hit "Commit All" to commit your local changes.
+      
+      Then click 'Sync' to pull changes from the server.
+      
+      Then click 'Push' to push your committed changes to the server.  
+      
 13. If it throws an error on the web page with the following text:
+
       "A network-related or instance-specific error occurred while establishing a connection to SQL Server"
-         Your LocalDb configuration is the cause, see "Checking LocalDb Configuration" section.
+      
+         Your LocalDb configuration is likely the cause, see "Checking LocalDb Configuration" section to resolve it.
 
 
+---
 
-
-Checking SqlLocalDb Configuration
+## Checking SqlLocalDb Configuration
 1. Open command prompt (Hit "Windows key" then "cmd" then "enter".
 2. Enter "sqllocaldb" then hit "enter"
 3. If you see the following error text:
