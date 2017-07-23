@@ -66,7 +66,9 @@
 ### Connecting to LocalDB from SQL Server Management Studio
 
 Server Type : Database Engine
+
 Server Name : (LocalDb)\MSSQLLocalDB
+
 Authentication : Windows Authentication
 
 Then click connect!
