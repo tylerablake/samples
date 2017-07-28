@@ -1,5 +1,32 @@
 # Getting up and running following one of my samples.
 
+**Note:** UofL students have access to VS and SSMS through DreamSpark..use that instead of following the links I provide!
+
+## Install Visual Studio 2017
+1. Go to http://www.visualstudio.com/downloads
+2. Select a version of Visual Studio to download **Note:** Visual Studio 2017 Community is free!
+3. Download the installer
+4. Launch the installer
+5. Select the type of installation
+6. **Select the "Web Development" option under Web & Cloud ONLY!**
+TODO: Insert Image here
+7. Click Install
+
+
+## Installing SQL Server Management Studio 2014
+1. Go to http://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
+2. Download the most up to date version of SQL Server Management Studio 2014
+3. Run the installer
+4. If the installer fails for .NET Framework 3.5 with Service Pack 1 follow steps 4a-4d
+      4a. Go to  http://www.microsoft.com/en-us/download/details.aspx?id=22
+      4b. Hit download
+      4c. Run the file to install .NET Framework 3.5 with SP 1 on your machine
+      4d. Hit "retry" or something like that on the installer..
+5. Once the installation finishes proceed.
+6. Follow the "Checking SqlLocalDb Configuration" section
+7. Open SSMS 2014
+8. Follow the "Connecting to LocalDB from SQL Server Management Studio" section
+
 
 ## Creating and Commiting your first project.
 1. Create a repository under your GitHub account.
