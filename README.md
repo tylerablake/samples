@@ -57,8 +57,6 @@ TODO: Insert Image here
          Your LocalDb configuration is likely the cause, see "Checking LocalDb Configuration" section to resolve it.
 
 
----
-
 ## Checking SqlLocalDb Configuration
 1. Open command prompt (Hit "Windows key" then "cmd" then "enter".
 2. Enter "sqllocaldb" then hit "enter"
@@ -90,7 +88,7 @@ TODO: Insert Image here
 
       Run 'sqllocaldb create MSSQLLocalDB' in command prompt, then run 'sqllocaldb info' and see that 'MSSQLLocalDB' shows up.
     
-### Connecting to LocalDB from SQL Server Management Studio
+## Connecting to LocalDB from SQL Server Management Studio
 
 Server Type : Database Engine
 
