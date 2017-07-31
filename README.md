@@ -9,7 +9,9 @@
 4. Launch the installer
 5. Select the type of installation
 6. **Select the "Web Development" option under Web & Cloud ONLY!**
-TODO: Insert Image here
+
+![VS 2017 Installer Prompt](vs2017Installer.png)
+
 7. Click Install
 
 
