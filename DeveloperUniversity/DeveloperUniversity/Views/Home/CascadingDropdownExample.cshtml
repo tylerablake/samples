@@ -1,0 +1,58 @@
+﻿@model DeveloperUniversity.Models.Enrollment
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+@{
+    ViewBag.Title = "CascadingDropdownExample";
+}
+
+<h2>CascadingDropdownExample</h2>
+
+<div class="col-md-12">
+    <div class="panel-default">
+        <div classs="panel-heading"></div>
+        <div classs="panel-body">
+            <p>In this example I'm just pulling the first enrollment in the database.. focus more on the functionality :)</p>
+            <p>Select a program to see a list of courses associated to that program.</p>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Program, "Program", htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.DropDownList("ProgramId", null, "Select Program...", htmlAttributes: new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.ProgramId, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CourseId, "Course Name", htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.DropDownList("CourseId", null, "Select Course...", htmlAttributes: new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.CourseId, "", new {@class = "text-danger"})
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    $("#ProgramId").change(function () {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("GetCourses", "Home")',
+            dataType: 'json',
+            data: { ProgramID: $("#ProgramId").val() },
+            success: function (courses) {
+                $("#CourseId").empty();
+                $.each(courses, function (i,course) {
+                    $("#CourseId").append('<option value="' + course.Value + '">' + course.Text + '</option>');
+                });
+            },
+            error: function (ex) {                
+                alert('Failed to retrieve courses.');
+                $("#CourseId").empty();
+            }
+        });
+    });
+
+
+</script>
