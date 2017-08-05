@@ -44,5 +44,6 @@ namespace KHBPA.Models
         }
 
         public DbSet<Member> Members { get; set; }
+        public DbSet<Membership> Memberships { get; set; }
     } 
 }
