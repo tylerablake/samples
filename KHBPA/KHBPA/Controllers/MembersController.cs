@@ -79,7 +79,7 @@ namespace KHBPA.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,BirthDate, Membership")] Member member)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,BirthDate")] Member member)
         {
             if (ModelState.IsValid)
             {
