@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "UserManagement";
+}
+
+
+<div class="panel panel-primary" style="margin-top: 50px;">
+    <div class="panel-heading">
+        <h4>User Management and Role Management</h4>
+    </div>
+    <div class="panel-body">
+        <b>User Management</b>
+        <p>User management is handled be default when you select single user authentication when creating a new .NET MVC project.</p>
+        <b>Role Management</b>
+        <p>Role management is not entirely done by default, I would say that the base set up is complete for you out of the box, but you will need to 
+            configure the identity tables (the tables responsible for handling authentication of users by default) to manage the roles you desire.
+        </p>
+        <b>Note:</b>
+        <p>
+            In this sample application I only created an Admin role and added authentication checks for that role in most of my controllers, you can copy the same logic and code to create multiple roles if you want more roles.
+            Feel free to look at the Startup.cs, CreateRolesAndUsers() method to see how I created roles and had them seeded into the AspNetRoles table.
+        </p>
+    </div>
+</div>
+

@@ -9,7 +9,9 @@
 4. Launch the installer
 5. Select the type of installation
 6. **Select the "Web Development" option under Web & Cloud ONLY!**
-TODO: Insert Image here
+
+![VS 2017 Installer Prompt](vs2017Installer.png)
+
 7. Click Install
 
 
@@ -17,11 +19,16 @@ TODO: Insert Image here
 1. Go to http://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 2. Download the most up to date version of SQL Server Management Studio 2014
 3. Run the installer
-4. If the installer fails for .NET Framework 3.5 with Service Pack 1 follow steps 4a-4d
+4. If the installer fails for .NET Framework 3.5 with Service Pack 1 follow steps 4a-4d:
+
       4a. Go to  http://www.microsoft.com/en-us/download/details.aspx?id=22
+      
       4b. Hit download
+      
       4c. Run the file to install .NET Framework 3.5 with SP 1 on your machine
+      
       4d. Hit "retry" or something like that on the installer..
+      
 5. Once the installation finishes proceed.
 6. Follow the "Checking SqlLocalDb Configuration" section
 7. Open SSMS 2014
