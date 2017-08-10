@@ -20,8 +20,7 @@ namespace KHBPARedux.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationDbContext(): base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
@@ -29,5 +28,27 @@ namespace KHBPARedux.Models
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //This is where you can tell EF explicitly how to map your entities in the database.
+
+            //1 directional relationship between Members and Memberships
+            //Member has a reference to Membership but Membership does NOT have a reference to Members
+            modelBuilder.Entity<Member>()
+                .HasRequired(member => member.Membership)
+                .WithRequiredPrincipal();                    
+
+            //Then call the base.
+            base.OnModelCreating(modelBuilder);
+        }
+
+        //Adding a DbSet for your entites will cause them to be added to the context 
+        //and thus saved to the database.
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Membership> Memberships { get; set; }
+
+
+        //Then run Update-Database in the Package Manager Console, run Enable-Migrations if you haven't already.
     }
 }
