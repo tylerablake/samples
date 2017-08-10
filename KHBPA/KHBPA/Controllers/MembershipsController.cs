@@ -10,108 +10,107 @@ using KHBPA.Models;
 
 namespace KHBPA.Controllers
 {
-    public class MembersController : Controller
+    public class MembershipsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Members
+        // GET: Memberships
         public ActionResult Index()
         {
-            return View(db.Members.ToList());
+            return View(db.Memberships.ToList());
         }
 
-        // GET: Members/Details/5
+        // GET: Memberships/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Member member = db.Members.Find(id);
-            if (member == null)
+            Membership membership = db.Memberships.Find(id);
+            if (membership == null)
             {
                 return HttpNotFound();
             }
-            return View(member);
+            return View(membership);
         }
 
-        // GET: Members/Create
+        // GET: Memberships/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Members/Create
+        // POST: Memberships/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,BirthDate")] Member member)
+        public ActionResult Create([Bind(Include = "Id,Type")] Membership membership)
         {
             if (ModelState.IsValid)
             {
-                db.Members.Add(member);
+                db.Memberships.Add(membership);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(member);
+            return View(membership);
         }
 
-        // GET: Members/Edit/5
+        // GET: Memberships/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Member member = db.Members.Find(id);
-            if (member == null)
+            Membership membership = db.Memberships.Find(id);
+            if (membership == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Memberships = db.Memberships.ToList();
-            return View(member);
+            return View(membership);
         }
 
-        // POST: Members/Edit/5
+        // POST: Memberships/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,BirthDate")] Member member)
+        public ActionResult Edit([Bind(Include = "Id,Type")] Membership membership)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(member).State = EntityState.Modified;
+                db.Entry(membership).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(member);
+            return View(membership);
         }
 
-        // GET: Members/Delete/5
+        // GET: Memberships/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Member member = db.Members.Find(id);
-            if (member == null)
+            Membership membership = db.Memberships.Find(id);
+            if (membership == null)
             {
                 return HttpNotFound();
             }
-            return View(member);
+            return View(membership);
         }
 
-        // POST: Members/Delete/5
+        // POST: Memberships/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Member member = db.Members.Find(id);
-            db.Members.Remove(member);
+            Membership membership = db.Memberships.Find(id);
+            db.Memberships.Remove(membership);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
