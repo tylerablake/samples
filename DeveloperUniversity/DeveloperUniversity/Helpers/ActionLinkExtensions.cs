@@ -24,14 +24,14 @@ namespace DeveloperUniversity.Helpers
 
         public static MvcHtmlString CategoryLink(this HtmlHelper helper,Category category)
         {
-            return helper.ActionLink(category.Name, "Category", "Blog",
+            return helper.ActionLink(category.Name, "ViewByCategory", "Blog",
                 new
                 {
-                    category = category.UrlSlug
+                    Id = category.Id
                 },
                 new
                 {
-                    title = String.Format("See all posts in {0}", category.Name)
+                    title = String.Format("See all {0} posts", category.Name)
                 });
         }
 

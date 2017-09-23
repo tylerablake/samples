@@ -124,7 +124,28 @@ namespace DeveloperUniversity.Migrations
                         //course3.Enrollments.Add(enrollment3);
                     }
 
-                context.SaveChanges();
+
+            //Add Categories
+            if (context.Categories == null)
+            {
+                context.Categories.Add(new Category()
+                {
+                    Id = 1,
+                    Name = "Blog",
+                    Description = "Category for blogs",
+                    UrlSlug = ""
+                });
+
+                context.Categories.Add(new Category()
+                {
+                    Id = 2,
+                    Name = "News",
+                    Description = "Category for news items",
+                    UrlSlug  = ""
+                });
+            }
+
+            context.SaveChanges();
             //#endif
         }
     }

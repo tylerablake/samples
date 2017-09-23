@@ -31,5 +31,6 @@ namespace DeveloperUniversity.Models
         public virtual Category Category { get; set; }
 
         public virtual IList<Tag> Tags { get; set; }
+        public virtual List<Comment> Comments { get; set; }
     }
 }

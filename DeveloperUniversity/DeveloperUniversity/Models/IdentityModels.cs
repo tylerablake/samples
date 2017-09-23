@@ -30,7 +30,7 @@ namespace DeveloperUniversity.Models
             ////This will create database if one doesn't exist.
             Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
             ////This will drop and re-create the database if model changes.
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
 #endif
 
 
@@ -68,5 +68,12 @@ namespace DeveloperUniversity.Models
         public DbSet<Absence> Absences { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+
+        //public System.Data.Entity.DbSet<DeveloperUniversity.Models.ViewModels.CreateBlogPostViewModel> CreateBlogPostViewModel { get; set; }
+
+        //public System.Data.Entity.DbSet<DeveloperUniversity.Models.ViewModels.CreateCommentViewModel> CreateCommentViewModel { get; set; }
+
+        //public System.Data.Entity.DbSet<DeveloperUniversity.Models.ViewModels.BlogPostDetailsViewModel> BlogPostDetailsViewModel { get; set; }
     }
 }

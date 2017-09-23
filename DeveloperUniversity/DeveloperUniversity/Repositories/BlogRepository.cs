@@ -13,7 +13,7 @@ namespace DeveloperUniversity.Repositories
         public IList<Post> Posts(int pageNo, int pageSize)
         {
             var posts = _db.Posts
-                                  .Where(p => p.Published)
+                                  .Where(p => p.Published != false)
                                   .OrderByDescending(p => p.PostedOn)
                                   .Skip(pageNo * pageSize)
                                   .Take(pageSize)
@@ -31,7 +31,7 @@ namespace DeveloperUniversity.Repositories
 
         public int TotalPosts()
         {
-            return _db.Posts.Where(p => p.Published != null).Count();
+            return _db.Posts.Where(p => p.Published != false).Count();
         }
     }
 }

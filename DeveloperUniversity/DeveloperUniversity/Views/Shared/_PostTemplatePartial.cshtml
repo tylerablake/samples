@@ -39,15 +39,32 @@
     </div>
 
     <div class="post-foot">
-        @Html.ActionLink("continue...", "post", "blog",
+        @if (User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Edit", "Edit", "Blog",
+                    new
+                    {
+                        Id = Model.Id
+                    },
+                    new { title = "Edit Post" }
+                )
+        }
+         
+
+        @Html.ActionLink("Read More", "Details", "Blog",
         new
         {
-            year = Model.PostedOn.Year,
-            month = Model.PostedOn.Month,
-            day = Model.PostedOn.Day,
-            title = Model.UrlSlug
+            Id = Model.Id
         },
-        new { title = "continue..." }
+        new { title = "Read More" }
+    ) | 
+
+        @Html.ActionLink("Comment", "CreateComment", "Blog",
+        new
+        {
+            Id = Model.Id
+        },
+        new { title = "Comment" }
     )
     </div>
 </div>
