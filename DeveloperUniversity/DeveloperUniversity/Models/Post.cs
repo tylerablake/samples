@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,6 +13,7 @@ namespace DeveloperUniversity.Models
 
         public virtual string Title { get; set; }
 
+        [DisplayName("Short Description")]
         public virtual string ShortDescription { get; set; }
 
         public virtual string Description { get; set; }
@@ -20,7 +23,7 @@ namespace DeveloperUniversity.Models
         public virtual string UrlSlug { get; set; }
 
         public virtual bool Published { get; set; }
-
+        
         public virtual DateTime PostedOn { get; set; }
 
         public virtual DateTime? Modified { get; set; }
