@@ -65,10 +65,8 @@ namespace DeveloperUniversity.Models
         public DbSet<Campus> Campuses { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Document> Documents { get; set; }
-
-
-
-
         public DbSet<Absence> Absences { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
