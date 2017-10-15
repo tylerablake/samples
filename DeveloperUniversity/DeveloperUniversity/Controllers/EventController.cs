@@ -8,6 +8,7 @@ using DeveloperUniversity.Models;
 using DHTMLX.Common;
 using DHTMLX.Scheduler;
 using DHTMLX.Scheduler.Data;
+using System.Globalization;
 
 namespace DeveloperUniversity.Controllers
 {
@@ -69,11 +70,11 @@ namespace DeveloperUniversity.Controllers
         }
 
         public ActionResult Save(string id, string text, string start_date, string end_date)
-        {
-
+        {            
                 var existingEvent = _db.Events.FirstOrDefault(e => e.id.ToString() == id);
-                var newStartDate = Convert.ToDateTime(start_date);
-                var newEndDate = Convert.ToDateTime(end_date);
+
+                var newStartDate = Convert.ToDateTime(start_date.Substring(0, 24));
+                var newEndDate = Convert.ToDateTime(end_date.Substring(0, 24));
 
 
             if (existingEvent != null)

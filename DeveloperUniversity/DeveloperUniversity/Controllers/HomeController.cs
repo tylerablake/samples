@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Web;
@@ -14,10 +11,11 @@ namespace DeveloperUniversity.Controllers
 {
     public class HomeController : Controller
     {
-        public ApplicationDbContext _db = new ApplicationDbContext();
+
+        private readonly ApplicationDbContext _db;
+
         public ActionResult Index()
-        {
-            
+        {            
             return View();
         }
 

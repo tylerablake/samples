@@ -15,6 +15,7 @@ namespace DeveloperUniversity
             CreateRolesAndUsers();
         }
 
+
         public void CreateRolesAndUsers()
         {
             ApplicationDbContext context = new ApplicationDbContext();

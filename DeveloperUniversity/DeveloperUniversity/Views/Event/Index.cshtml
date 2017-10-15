@@ -41,7 +41,13 @@
         if (eventWasJustDeleted) {
             return;
         }
-        var props = { "id": obj.id, "text": obj.text , "start_date": obj.start_date, "end_date": obj.end_date};
+
+        var selectedDay = new Date();
+        selectedDay.setMonth(obj.start_date.getMonth());
+        selectedDay.setDate(obj.start_date.getDate());
+        var formattedStartDate = obj.start_date.toString().replace(obj.start_date.getUTCFullYear().toString(), selectedDay.getFullYear().toString());
+        var formattedEndDate = obj.end_date.toString().replace(obj.end_date.getUTCFullYear().toString(), selectedDay.getFullYear().toString());
+        var props = { "id": obj.id, "text": obj.text, "start_date": formattedStartDate, "end_date": formattedEndDate};
 
         $.ajax({
             url: "/Event/Save",
