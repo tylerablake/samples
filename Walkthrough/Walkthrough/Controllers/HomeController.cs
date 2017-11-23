@@ -13,6 +13,16 @@ namespace Walkthrough.Controllers
             return View();
         }
 
+        public ActionResult Overview()
+        {
+            return View();
+        }
+
+        public ActionResult MvcOverview()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
