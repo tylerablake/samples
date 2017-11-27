@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Scaffolded Project Code Overview";
+}
+
+<h2>Scaffolded .NET Project Code Overview</h2>
+
+<p>In this section of the walkthrough we'll walkthrough the default scaffolded .NET MVC project code and talk about the following:</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <ul>                                
+                <li>What is the App_Data folder for?</li>
+                <li>What is the App_Start folder for?</li>
+                <li>What is the Content folder for?</li>
+                <li>What is the Controllers folder for?</li>
+                <li>What is the Fonts folder for?</li>
+                <li>What is the Models folder for?</li>
+                <li>What is the Scripts folder for?</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li>What is the Views folder for?</li>
+                <li>What is the ApplicationInsights.Config file for?</li>
+                <li>What is the favicon.ico file for?</li>
+                <li>What is the Global.asax file for?</li>
+                <li>What is the packages.config file for?</li>
+                <li>What is the Startup.cs file for?</li>
+                <li>What is the Web.Config file for?</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h4>What is the App_Data folder for?</h4>
+<p>The intended use for App_Data folder is to store database related file. Usually SQL Server Express .mdf files</p>
+
+<h4>What is the App_Start folder for?</h4>
+<p>App_Start folder has been introduced in MVC4. It contains various configurations files like as BundleConfig.cs, FilterConfig.cs, RouteConfig.cs, WebApiConfig.cs for your application</p>
+<p>All these settings are registered within Application_Start method of Global.asax.cs file</p>
+<ul>
+    <li>BundleConfig.cs – This is used to create and register bundles for CSS and JS files. By default, various bundles are added in this files including jQuery, jQueryUI, jQuery validation, Modernizr, and Site CSS</li>
+    <li>FilterConfig.cs – This is used to register global MVC filters like error filters, actions filters etc. By default it contains HandleErrorAttribute filter</li>
+    <li>IdentityConfig.cs - This is contains methods for identity authentication for the application</li>
+    <li>RouteConfig.cs – This is used to register various route patterns for your ASP.NET MVC application. By default, one route is registered here named as Default Route</li>
+    <li>Startup.Auth.cs – This is used to configure the authentication for the application</li>
+</ul>
+
+<h4>What is the Content folder for?</h4>
+<p>The content folder is used to hold your site's CSS and images</p>
+
+<h4>What is the Controllers folder for?</h4>
+<p>The controllers folder contains all of your controllers</p>
+
+<h4>What is the Fonts folder for?</h4>
+<p>The fonts folder contains all of your fonts</p>
+
+<h4>What is the Models folder for?</h4>
+<p>The models folder contains all of your models</p>
+
+<h4>What is the Scripts folder for?</h4>
+<p>The scripts folder contains all of your JavaScript files</p>
+
+<h4>What is the Views folder for?</h4>
+<p>The views folder contains all of your views</p>
+
+<h4>What is the ApplicationInsights.Config file for?</h4>
+<p>This file is used to set up Application Insights for your application but we aren't using that so no need to worry about this file</p>
+
+<h4>What is the favicon.ico file for?</h4>
+<p>This is the image that shows in the title bar of your website, be default it looks like a couple of files together</p>
+
+<h4>What is the Global.asax file for?</h4>
+<p>The Global.asax file, also known as the ASP.NET application file, is an optional file that contains code for responding to application-level and session-level events raised by ASP.NET or by HTTP modules</p>
+
+<h4>What is the packages.config file for?</h4>
+<p>The packages.config file is used to list all of the packages used in the application to help Nuget (our package manager) maintain packages for our application</p>
+
+<h4>What is the Startup.cs file for?</h4>
+<p>Startup.cs file contains Startup class which triggers at first when application launches and even in each HTTP request/response</p>
+
+<h4>What is the Web.Config file for?</h4>
+<p>The Web.Config file is used to configure the application, it stores information about the application</p>
+<p>In this walkthrough we will mainly use the web.config file to set up a connection to a database through a connection string</p>
+
+<p>Now let's look at how to start writing some code, we'll start with Code First Migrations.</p>
+<p>@Html.ActionLink("What is Code First?", "StartingCodeFirst", "Home", new { @class = "btn btn-primary" })</p>

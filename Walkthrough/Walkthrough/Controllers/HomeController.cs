@@ -23,6 +23,20 @@ namespace Walkthrough.Controllers
             return View();
         }
 
+        public ActionResult CreatingAProject()
+        {
+            return View();
+        }
+
+        public ActionResult ScaffoldedProjectCodeOverview()
+        {
+            return View();
+        }
+
+        public ActionResult StartingCodeFirst()
+        {
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

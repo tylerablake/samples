@@ -259,6 +259,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Overview.cshtml" />
     <Content Include="Views\Home\MvcOverview.cshtml" />
+    <Content Include="Views\Home\CreatingAProject.cshtml" />
+    <Content Include="Views\Home\ScaffoldedProjectCodeOverview.cshtml" />
+    <Content Include="Views\Home\StartingCodeFirst.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
