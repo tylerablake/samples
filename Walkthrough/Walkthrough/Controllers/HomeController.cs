@@ -33,6 +33,11 @@ namespace Walkthrough.Controllers
             return View();
         }
 
+        public ActionResult ORMApproaches()
+        {
+            return View();
+        }
+
         public ActionResult StartingCodeFirst()
         {
             return View();

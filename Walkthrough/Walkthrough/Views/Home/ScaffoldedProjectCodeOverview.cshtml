@@ -41,11 +41,11 @@
 <p>App_Start folder has been introduced in MVC4. It contains various configurations files like as BundleConfig.cs, FilterConfig.cs, RouteConfig.cs, WebApiConfig.cs for your application</p>
 <p>All these settings are registered within Application_Start method of Global.asax.cs file</p>
 <ul>
-    <li>BundleConfig.cs – This is used to create and register bundles for CSS and JS files. By default, various bundles are added in this files including jQuery, jQueryUI, jQuery validation, Modernizr, and Site CSS</li>
-    <li>FilterConfig.cs – This is used to register global MVC filters like error filters, actions filters etc. By default it contains HandleErrorAttribute filter</li>
-    <li>IdentityConfig.cs - This is contains methods for identity authentication for the application</li>
-    <li>RouteConfig.cs – This is used to register various route patterns for your ASP.NET MVC application. By default, one route is registered here named as Default Route</li>
-    <li>Startup.Auth.cs – This is used to configure the authentication for the application</li>
+    <li style="color:#919aa1;"><b>BundleConfig.cs</b> – This is used to create and register bundles for CSS and JS files. By default, various bundles are added in this files including jQuery, jQueryUI, jQuery validation, Modernizr, and Site CSS</li>
+    <li style="color:#919aa1;"><b>FilterConfig.cs</b> – This is used to register global MVC filters like error filters, actions filters etc. By default it contains HandleErrorAttribute filter</li>
+    <li style="color:#919aa1;"><b>IdentityConfig.cs</b> - This is contains methods for identity authentication for the application</li>
+    <li style="color:#919aa1;"><b>RouteConfig.cs</b> – This is used to register various route patterns for your ASP.NET MVC application. By default, one route is registered here named as Default Route</li>
+    <li style="color:#919aa1;"><b>Startup.Auth.cs</b> – This is used to configure the authentication for the application</li>
 </ul>
 
 <h4>What is the Content folder for?</h4>
@@ -85,5 +85,12 @@
 <p>The Web.Config file is used to configure the application, it stores information about the application</p>
 <p>In this walkthrough we will mainly use the web.config file to set up a connection to a database through a connection string</p>
 
-<p>Now let's look at how to start writing some code, we'll start with Code First Migrations.</p>
-<p>@Html.ActionLink("What is Code First?", "StartingCodeFirst", "Home", new { @class = "btn btn-primary" })</p>
+<p>Before we can start looking at code, we need to talk about how we'll interact with the database, let's cover some ORM approaches really quick.</p>
+
+<br />
+<hr />
+<br />
+<span>
+    @Html.ActionLink("Back to Creating A Project", "CreatingAProject", "Home", new { @class = "btn btn-default" })
+    @Html.ActionLink("ORM Approaches", "ORMApproaches", "Home", new { @class = "btn btn-primary" })
+</span>

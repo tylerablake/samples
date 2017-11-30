@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "ORM Approaches";
+}
+
+<h2>ORM Approaches</h2>
+
+<p>Before we can jump right into code, we need to review something really quick. Most of our applications are data driven, which means we must interact with a database. </p>
+<p>This typically occurs in the form of presenting data to the user, or saving user inputs into the database, here are the ways to do this with Entity Framework, the ORM we will use in this walkthrough.</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <ul>
+                <li>Database First</li>
+                <li>Model First</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li>Code First</li>
+                <li>Code First from Database First</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<p>What do they mean?</p>
+
+<h4>Database First</h4>
+<p>Database first means you already have a database created on a SQL server and just want to upload the .edmx file and have your ORM create your domain classes for you</p>
+
+<h4>Model First</h4>
+<p>Model first means you want to use the visual editor to map out your database and then have your ORM create your domain classes for you</p>
+
+<h4>Code First (A Crowd Favorite)</h4>
+<p>Code first means you will start creating your domain objects manually and tell your ORM how to map those objects and your ORM will create your database for you</p>
+
+<h4>Code First from Database First</h4>
+<p>This is a mix between Database First, and Code First. Basically you will give your ORM the .edmx file from your pre-existing database, but have the ORM generate the database and domain classes in a way that it looks like you did code first</p>
+
+
+<h4>As you might have guessed, we are going to be using code first for this project so let's get going then!</h4>
+
+<br />
+<hr />
+<br />
+<span>
+    @Html.ActionLink("Back to Scaffolded Code Overview", "ScaffoldedProjectCodeOverview", "Home", new { @class = "btn btn-default" })
+    @Html.ActionLink("Get Started with Code First", "StartingCodeFirst", "Home", new { @class = "btn btn-primary" })
+</span>

@@ -5,4 +5,97 @@
 
 <h2>Starting Code First</h2>
 
-<p>Coming soon!</p>
+<p>There are a few steps we are going to cover in this section, here is an overview:</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <ul>
+                <li>Install/Verify Entity Framework Exists in Project</li>
+                <li>Enable Migrations</li>
+                <li>Create Domain Classes</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li>Add the Domain Class to the Context</li>
+                <li>Add A Migration</li>
+                <li>Update the Database</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<h4>Install/Verify Entity Framework Exists in Project</h4>
+<p>With your project open, follow these steps:</p>
+<ol>
+    <li>Go to Tools</li>
+    <li>Click on NuGet Package Manager</li>
+    <li>Click on Package Manager Console</li>
+    <li>A Window should appear at the bottom of Visual Studoi</li>
+    <li>After it finishes loading you'll see '<b>PM></b>' appear in the window, this means you can start entering commands</li>
+    <li>Package Manager Console is a powershell window inside of Visual Studio, so it uses the <b>Verb-Noun</b> command convention</li>
+    <li>Type '<b>Install-Package EntityFramework</b>'</li>
+    <li>Congratulations, you just used NuGet's Package Manager Console to install Entity Framework in your project!</li>
+</ol>
+
+<h4>Enable Migrations</h4>
+<p>Now we need to enable migrations for your project, follow these steps:</p>
+<ol>
+    <li>Go back to the Package Manager Console</li>
+    <li>Type '<b>Enable-Migrations</b>' to enable migrations in your project</li>
+    <li>Press enter</li>
+</ol>
+
+
+<h4>Create Domain Classes</h4>
+<p>Now let's go create domain classes</p>
+<ol>
+    <li>Now right click on your <b>Models</b> folder</li>
+    <li>Click <b>Add</b></li>
+    <li>Click <b>Class</b></li>
+    <li>Give the class a database table name, for example, <b>Student</b></li>
+    <li>Give the domain class some properties, for example, public int Id {get;set;}</li>
+</ol>
+
+<p><b>**Note: Talk about a few EF conventions here!**</b></p>
+
+<h4>Add the Domain Class to the Context</h4>
+<p>Now we are ready to tell Entity Framework about the table we would like it to create, the <b>Student</b> table</p>
+<ol>
+    <li>Go to <b>Solution Explorer</b></li>
+    <li>Open the <b>Models</b> folder</li>
+    <li>Open the <b>IdentityModels</b> file</li>
+    <li>Inside of the <b>ApplicationDbContext</b> class, add the following line:</li>
+    <li>public DbSet< Student > Students {get;set;}</li>
+</ol>
+
+<h4>Add A Migration</h4>
+<p>Now we have to tell Entity Framework to add a migration record in the Migration History table in the database</p>
+<p>This table is how the database, and the database contexts that get created at runtime keep in sync</p>
+<ol>
+    <li>Go back to the Package Manager Console</li>
+    <li>Type '<b>Add-Migration</b> AddedStudentTable'</li>
+    <li>Press enter</li>
+</ol>
+
+
+<h4>Update the Database</h4>
+<p>Now we are on our last step, we just have to tell Entity Framework to execute the migrations we've created on the database</p>
+<ol>
+    <li>Go back to the Package Manager Console</li>
+    <li>Type '<b>Update-Database</b>'</li>
+    <li>Press Enter</li>
+</ol>
+
+<p>Congratulations! You just created your first of many tables in the database using the Code First approach with Entity Framework.</p>
+
+<br />
+<hr />
+<br />
+<span>
+    @Html.ActionLink("Back to ORM Approaches", "ORMApproaches", "Home", new { @class = "btn btn-default" })
+    @Html.ActionLink("Go to Next Part (Coming Soon)", "StartingCodeFirst", "Home", new { @class = "btn btn-primary" })
+</span>

@@ -1,9 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "CreatingAProject";
+    ViewBag.Title = "Creating A Project";
 }
 
-<h2>CreatingAProject</h2>
+<h2>Creating A Project</h2>
 
 <p>Creating a .NET MVC project is very quick and easy, here's how to do it.</p>
 
@@ -21,4 +21,11 @@
 <p>Voila! Your .NET MVC project is created and you are ready to start coding!</p>
 
 <p>Lets go look at some code!</p>
-<p>@Html.ActionLink("MVC Code Overview", "ScaffoldedProjectCodeOverview", "Home", new { @class = "btn btn-primary" })</p>
+
+<br />
+<hr />
+<br />
+<span>
+    @Html.ActionLink("Back to MVC Overview", "MvcOverview", "Home", new { @class = "btn btn-default" })
+    @Html.ActionLink("MVC Code Overview", "ScaffoldedProjectCodeOverview", "Home", new { @class = "btn btn-primary" })
+</span>
